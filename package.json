@@ -1,0 +1,19 @@
+{
+  "name": "api-restfull",
+  "version": "1.0.0",
+  "description": "api-restfull",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec node server.js"
+  },
+  "author": "Allysson-Cidade",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "nodemon": "^3.1.7",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "uuidv4": "^6.2.13"
+  }
+}
