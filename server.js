@@ -17,11 +17,11 @@ app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });
 
-app.get("/alunos", (req, res) => {
+app.get("/alunos", async (req, res) => {
   try {
-    const alunos = findAll();
+    const alunos = await findAll();
     res.json(alunos);
   } catch (error) {
-    res.status(500).json({ message: "Erro ao retornar alunos", error });
+    res.status(500).json({ message: "Erro ao retornar alunos", error: error.message });
   }
 });

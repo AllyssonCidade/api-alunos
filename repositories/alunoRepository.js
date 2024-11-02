@@ -1,5 +1,5 @@
 const { v4: uuidv4 } = require("uuid");
-
+const db = require('../database');
 let alunos = [];
 
 module.exports = {};
@@ -18,5 +18,15 @@ function create({ nome, email, nome_curso }) {
 
 
 function findAll() {
-  return [...alunos];
+  return new Promise((resolve, reject) => {
+    const sql = 'SELECT * FROM alunos';
+
+    db.all(sql, [], (err, rows) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(rows);
+      }
+    });
+  });
 }
