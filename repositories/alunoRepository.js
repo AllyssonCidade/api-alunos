@@ -15,3 +15,8 @@ function create({ nome, email, nome_curso }) {
     alunos.push(aluno);
     return { id, nome, email, nome_curso };
   }
+
+
+function findAll() {
+  return [...alunos];
+}
