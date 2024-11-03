@@ -52,3 +52,19 @@ function remove(id) {
     });
   });
 }
+
+function update(id, { nome, email, nome_curso }) {
+  const index = alunos.findIndex((aluno) => aluno.id === id);
+  if (index === -1) {
+    return null;
+  }
+  const updatedAluno = {
+    id,
+    nome,
+    email,
+    nome_curso,
+  };
+  alunos[index] = updatedAluno;
+  return updatedAluno;
+}
+

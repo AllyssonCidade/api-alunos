@@ -10,6 +10,7 @@
   "author": "Allysson-Cidade",
   "license": "ISC",
   "dependencies": {
+    "api-restfull": "file:",
     "express": "^4.21.1",
     "nodemon": "^3.1.7",
     "swagger-jsdoc": "^6.2.8",
