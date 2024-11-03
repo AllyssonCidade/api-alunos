@@ -31,4 +31,5 @@ function createTables() {
     });
 }
 
-module.exports = db;
+
+  module.exports = db;

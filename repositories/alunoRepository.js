@@ -30,3 +30,25 @@ function findAll() {
     });
   });
 }
+
+function remove(id) {
+  return new Promise((resolve, reject) => {
+    const sql = "DELETE FROM alunos WHERE id=?";
+    db.get("SELECT * FROM alunos WHERE id=?", [id], (err, aluno) => {
+      if (err) {
+        console.error(err.message);
+        return reject(err);
+      }
+      if (!aluno) {
+        return reject(new Error("Aluno não encontrado"));
+      }
+      db.run(sql, [id], (err) => {
+        if (err) {
+          console.error(err.message);
+          return reject(err);
+        }
+        resolve({ message: "Aluno removido com sucesso" });
+      });
+    });
+  });
+}
